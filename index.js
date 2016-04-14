@@ -9,7 +9,7 @@ var request = require("superagent")
 var randomNumber = Math.floor((Math.random() * 21) + 1)
 
 function wordMatch(){
-
+  return knex.raw('SELECT FROM "todos" WHERE id=' + id + ';')
 }
 
 app.listen(3000, function () {
