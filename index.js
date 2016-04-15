@@ -15,7 +15,7 @@ var request = require("superagent")
 //-----select by ID -----
 function wordMatch(){
   var randomNumber = Math.floor((Math.random() * 22) + 1)
-  return knex.raw('SELECT id,kiwiWord,expression FROM "kiwi" WHERE id=' + randomNumber + ';')
+  return knex.raw('SELECT id,kiwiWord,expression FROM kiwi WHERE id=' + randomNumber + ';')
 }
 
 function logError (err) {
