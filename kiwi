@@ -48,11 +48,15 @@ function listTodos (kiwiWords) {
   kiwiWords.forEach(function (word) { console.log(word.id, word.kiwiWord, word.expression)
 })
 }
+
 //-----select by ID -----
 function wordMatch(){
   var randomNumber = Math.floor((Math.random() * 21) + 1)
   return knex.raw('SELECT id,kiwiWord,expression FROM "kiwi" WHERE id=' + randomNumber + ';')
 }
+//-----------------------
+
+
 
 function logError (err) {
   console.log('Dang, we exploded like a bomb: ', err)

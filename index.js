@@ -19,7 +19,7 @@ var request = require("superagent")
 
 //-----select by ID -----
 function wordMatch(){
-  var randomNumber = Math.floor((Math.random() * 21) + 1)
+  var randomNumber = Math.floor((Math.random() * 22) + 1)
   return knex.raw('SELECT id,kiwiWord,expression FROM "kiwi" WHERE id=' + randomNumber + ';')
 }
 
@@ -39,6 +39,14 @@ app.get("/",function(req,res){
   res.render("index")
 });
 
-app.get("/home",function(){
-  res.render("index", wordMatch())
-});
+app.get("/home",function(req,res){
+  wordMatch() //returns a Promise 1.
+  .then(function(kiwiWords){ // save the callback 2.
+    //executes kiwiWords function .4
+    console.log(kiwiWords[0], "*************")
+    res.render("index", kiwiWords[0] ) // renders the file with this data .5
+  })
+
+});// waits for data 3.
+
+module.exports = app;

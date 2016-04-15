@@ -4,8 +4,6 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
   <link rel="stylesheet" type="text/css" href="./style.css">
-
-
 </head>
 <body>
 <!-- .container is main centered wrapper -->
@@ -18,12 +16,14 @@
       <h1>Learn to speak kiwi</h1>
       <br>
       <p>
-      <button class="submit" id="find" href="/home">click for new word</button>
-      <h3>Here is the kiwi word:</h3>
-      {{kiwi}}
+
+      <button class="submit" id="find" onclick="location.reload()">click for new word</button>
+      <h4>from:  kiwi</h4>
+      <h3>{{kiwiWord}}</h3>
+
       <br>
-      <h3>Here is what it means:</h3>
-      {{expression}}
+      <h4>to: rest of the world</h4>
+      <h3>{{expression}} </h3>
      </p>
     </div>
 
