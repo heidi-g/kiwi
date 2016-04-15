@@ -1,11 +1,6 @@
 #!/usr/bin/env node
-var knex = require('knex')({
-  client: 'sqlite3',
-  connection: {
-    filename: __dirname + '/dev.sqlite3'
-  },
-  useNullAsDefault: true
-})
+var knexConfig = require('./knexfile')
+var knex = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
 
 var express = require('express')
 var app = express()
@@ -35,11 +30,11 @@ app.listen(3000, function () {
   console.log('listening on port 3000!');
 });
 
-app.get("/",function(req,res){
-  res.render("index")
-});
+// app.get("/",function(req,res){
+//   res.render("index")
+// });
 
-app.get("/home",function(req,res){
+app.get("/",function(req,res){
   wordMatch() //returns a Promise 1.
   .then(function(kiwiWords){ // save the callback 2.
     //executes kiwiWords function .4
