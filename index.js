@@ -30,10 +30,6 @@ app.listen(process.env.PORT || 3000, function () {
   console.log('listening on port 3000!');
 });
 
-// app.get("/",function(req,res){
-//   res.render("index")
-// });
-
 app.get("/",function(req,res){
   wordMatch() //returns a Promise 1.
   .then(function(kiwiWords){ // save the callback 2.
