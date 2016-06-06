@@ -1,2 +1,9 @@
 # kiwi
-A kiwi words generator for group project
+
+Random quote generator using Knex and server side rendering.
+
+
+#start
+nodemom
+
+
